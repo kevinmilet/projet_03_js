@@ -74,14 +74,10 @@ fetch(productCatalog)
 startersBtn.onclick = function () {
 
     let productsStarters = [];
-    let productsDishes = [];
-    let productsDesserts = [];
-    let productsDrink = [];
-
 
     // on filtre le tableau entier pour ne garder que la catégorie 'starters'
     productsStarters = products.filter(element => element.category == 'starters');
-    
+
     // on boucle sur le nouveau tableau pour afficher le contenu
     productsStarters.forEach((element) => {
 
@@ -122,7 +118,7 @@ dishesBtn.onclick = function () {
 
     // on filtre le tableau entier pour ne garder que la catégorie 'starters'
     productsDishes = products.filter(element => element.category == 'dishes');
-    
+
     // on boucle sur le nouveau tableau pour afficher le contenu
     productsDishes.forEach((element) => {
 
@@ -163,7 +159,7 @@ dessertsBtn.onclick = function () {
 
     // on filtre le tableau entier pour ne garder que la catégorie 'starters'
     productsDesserts = products.filter(element => element.category == 'desserts');
-    
+
     // on boucle sur le nouveau tableau pour afficher le contenu
     productsDesserts.forEach((element) => {
 
@@ -204,7 +200,7 @@ drinksBtn.onclick = function () {
 
     // on filtre le tableau entier pour ne garder que la catégorie 'starters'
     productsDrinks = products.filter(element => element.category == 'drinks');
-    
+
     // on boucle sur le nouveau tableau pour afficher le contenu
     productsDrinks.forEach((element) => {
 
