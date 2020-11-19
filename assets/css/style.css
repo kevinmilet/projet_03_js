@@ -39,6 +39,10 @@ nav img {
     background-size: cover;
 }
 
+#colCard {
+    display: none;
+}
+
 .footer {
     background: grey;
     margin-top: 20px;
