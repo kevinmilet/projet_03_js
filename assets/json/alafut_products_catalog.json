@@ -108,7 +108,7 @@
         "name": "Cordon Bleu",
         "infos": "Cordon bleu revisité, sauce à la moutarde d’Alsace",
         "price": "25.99",
-        "img": "Cordon Bleu.jpg"
+        "img": "CordonBleu.jpg"
     },
     {
         "ref": "d003",
@@ -140,7 +140,7 @@
         "name": "Saint-Jacques",
         "infos": "Brochettes de coquilles Saint-Jacques rôties a la citronnelle fraîche, fondue d’endives au citron vert",
         "price": "22.99",
-        "img": "Saint-Jacques.jpg"
+        "img": "SaintJacques.jpg"
     },
     {
         "ref": "d007",
@@ -372,7 +372,7 @@
         "name": "Coca",
         "infos": "",
         "price": "5",
-        "img": "Coca.jng"
+        "img": "Coca.png"
     },
     {
         "ref": "dr011",

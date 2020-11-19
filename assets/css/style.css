@@ -22,6 +22,11 @@ p {
     font-family: 'Noto Serif', serif;
 }
 
+img {
+    width: 720px;
+    height: auto;
+}
+
 .navbar-brand, .nav-link {
     font-family: 'Railway', sans-serif;
     text-transform: uppercase;
