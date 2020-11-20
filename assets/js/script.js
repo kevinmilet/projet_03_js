@@ -1,3 +1,6 @@
+//
+// FONCTION DE TRI DES CATEGORIES
+//
 // Récupération des données pour les afficher dans les cartes
 // en fonction des catégories
 
@@ -8,19 +11,15 @@ const productCatalog = 'assets/json/alafut_products_catalog.json';
 
 // initialisation variables pour les tableaux
 let products = [];
-let productsStarters = [];
-let productsDishes = [];
-let productsDesserts = [];
-let productsDrinks = [];
+let productsCat = [];
+
 
 // initialisation de la variable qui incrémentera les ids de cartes
 let newId = 0;
 
 // initialisation des boutons
-const startersBtn = document.querySelector('#startersBtn');
-const dishesBtn = document.querySelector('#dishesBtn');
-const dessertsBtn = document.querySelector('#dessertsBtn');
-const drinksBtn = document.querySelector('#drinksBtn');
+
+let categories = document.querySelectorAll('#categoriesBtn a');
 
 // on récupère le fichier json
 fetch(productCatalog)
@@ -29,170 +28,44 @@ fetch(productCatalog)
         products = response;
     });
 
-// afficher seulement les entrées
-startersBtn.onclick = function () {
+categories.forEach(elements => {
 
-    document.querySelector('.row').innerHTML = '';
+    elements.onclick = function () {
 
-    let productsStarters = [];
+        document.querySelector('.row').innerHTML = '';
 
-    // on filtre le tableau entier pour ne garder que la catégorie 'starters'
-    productsStarters = products.filter(element => element.category == 'starters');
+        // on filtre le tableau entier pour ne garder que la catégorie 'starters'
+        productsCat = products.filter(property => property.category == elements.id);
 
-    // on boucle sur le nouveau tableau pour afficher le contenu
-    productsStarters.forEach((element) => {
+        // on boucle sur le nouveau tableau pour afficher le contenu
+        productsCat.forEach(item => {
 
-        // on récupère l'id la card
-        // et on la stocke dans une variable
-        let colCard = document.querySelector('#colCard');
+            // on récupère l'id la card
+            // et on la stocke dans une variable
+            let colCard = document.querySelector('#colCard');
 
-        // on clone la card
-        let colCardClone = colCard.cloneNode(true);
+            // on clone la card
+            let colCardClone = colCard.cloneNode(true);
 
-        // on incrémente les ids des éléments html de la card
-        // et on ajoute le contenu
-        colCardClone.id = 'colCardClone' + newId;
-        document.querySelector('.row').appendChild(colCardClone);
+            // on incrémente les ids des éléments html de la card
+            // et on ajoute le contenu
+            colCardClone.id = 'colCardClone' + newId;
+            document.querySelector('.row').appendChild(colCardClone);
+            // on affiche l'image du produit
+            colCardClone.querySelector('#cardImg').id = 'cardImg' + newId;
+            colCardClone.querySelector('#cardImg' + newId).src = `assets/img/${item.img}`;
+            // on afiiche le nom du produit
+            colCardClone.querySelector('#cardTitle').id = 'cardTitle' + newId;
+            colCardClone.querySelector('#cardTitle' + newId).innerHTML = item.name;
+            // on affiche le prix du produit
+            colCardClone.querySelector('#cardPrice').id = 'cardPrice' + newId;
+            colCardClone.querySelector('#cardPrice' + newId).innerHTML = item.price + ' €';
+            // on affiche le descrition du produit
+            colCardClone.querySelector('#cardContent').id = 'cardContent' + newId;
+            colCardClone.querySelector('#cardContent' + newId).innerHTML = item.infos;
 
-        colCardClone.querySelector('#cardImg').id = 'cardImg' + newId;
-        colCardClone.querySelector('#cardImg' + newId).src = `assets/img/${element.img}`;
-
-        colCardClone.querySelector('#cardTitle').id = 'cardTitle' + newId;
-        colCardClone.querySelector('#cardTitle' + newId).innerHTML = element.name;
-
-        colCardClone.querySelector('#cardPrice').id = 'cardPrice' + newId;
-        colCardClone.querySelector('#cardPrice' + newId).innerHTML = element.price + ' €';
-
-        colCardClone.querySelector('#cardContent').id = 'cardContent' + newId;
-        colCardClone.querySelector('#cardContent' + newId).innerHTML = element.infos;
-
-        // on incrémente l'id
-        newId++
-    });
-};
-
-// afficher seulement les plats
-dishesBtn.onclick = function () {
-
-    document.querySelector('.row').innerHTML = '';
-
-    let productsDishes = [];
-
-    // on filtre le tableau entier pour ne garder que la catégorie 'starters'
-    productsDishes = products.filter(element => element.category == 'dishes');
-
-    // on boucle sur le nouveau tableau pour afficher le contenu
-    productsDishes.forEach((element) => {
-
-        // on récupère l'id la card
-        // et on la stocke dans une variable
-        let colCard = document.querySelector('#colCard');
-
-        // on clone la card
-        let colCardClone = colCard.cloneNode(true);
-
-        // on incrémente les ids des éléments html de la card
-        // et on ajoute le contenu
-        colCardClone.id = 'colCardClone' + newId;
-        document.querySelector('.row').appendChild(colCardClone);
-
-        colCardClone.querySelector('#cardImg').id = 'cardImg' + newId;
-        colCardClone.querySelector('#cardImg' + newId).src = `assets/img/${element.img}`;
-
-        colCardClone.querySelector('#cardTitle').id = 'cardTitle' + newId;
-        colCardClone.querySelector('#cardTitle' + newId).innerHTML = element.name;
-
-        colCardClone.querySelector('#cardPrice').id = 'cardPrice' + newId;
-        colCardClone.querySelector('#cardPrice' + newId).innerHTML = element.price + ' €';
-
-        colCardClone.querySelector('#cardContent').id = 'cardContent' + newId;
-        colCardClone.querySelector('#cardContent' + newId).innerHTML = element.infos;
-
-        // on incrémente l'id
-        newId++
-    });
-};
-
-// afficher seulement les desserts
-dessertsBtn.onclick = function () {
-
-    document.querySelector('.row').innerHTML = '';
-
-    let productsDesserts = [];
-
-    // on filtre le tableau entier pour ne garder que la catégorie 'starters'
-    productsDesserts = products.filter(element => element.category == 'desserts');
-
-    // on boucle sur le nouveau tableau pour afficher le contenu
-    productsDesserts.forEach((element) => {
-
-        // on récupère l'id la card
-        // et on la stocke dans une variable
-        let colCard = document.querySelector('#colCard');
-
-        // on clone la card
-        let colCardClone = colCard.cloneNode(true);
-
-        // on incrémente les ids des éléments html de la card
-        // et on ajoute le contenu
-        colCardClone.id = 'colCardClone' + newId;
-        document.querySelector('.row').appendChild(colCardClone);
-
-        colCardClone.querySelector('#cardImg').id = 'cardImg' + newId;
-        colCardClone.querySelector('#cardImg' + newId).src = `assets/img/${element.img}`;
-
-        colCardClone.querySelector('#cardTitle').id = 'cardTitle' + newId;
-        colCardClone.querySelector('#cardTitle' + newId).innerHTML = element.name;
-
-        colCardClone.querySelector('#cardPrice').id = 'cardPrice' + newId;
-        colCardClone.querySelector('#cardPrice' + newId).innerHTML = element.price + ' €';
-
-        colCardClone.querySelector('#cardContent').id = 'cardContent' + newId;
-        colCardClone.querySelector('#cardContent' + newId).innerHTML = element.infos;
-
-        // on incrémente l'id
-        newId++
-    });
-};
-
-// afficher seulement les boissons
-drinksBtn.onclick = function () {
-
-    document.querySelector('.row').innerHTML = '';
-
-    let productsDrinks = [];
-
-    // on filtre le tableau entier pour ne garder que la catégorie 'starters'
-    productsDrinks = products.filter(element => element.category == 'drinks');
-
-    // on boucle sur le nouveau tableau pour afficher le contenu
-    productsDrinks.forEach((element) => {
-
-        // on récupère l'id la card
-        // et on la stocke dans une variable
-        let colCard = document.querySelector('#colCard');
-
-        // on clone la card
-        let colCardClone = colCard.cloneNode(true);
-
-        // on incrémente les ids des éléments html de la card
-        // et on ajoute le contenu
-        colCardClone.id = 'colCardClone' + newId;
-        document.querySelector('.row').appendChild(colCardClone);
-
-        colCardClone.querySelector('#cardImg').id = 'cardImg' + newId;
-        colCardClone.querySelector('#cardImg' + newId).src = `assets/img/${element.img}`;
-
-        colCardClone.querySelector('#cardTitle').id = 'cardTitle' + newId;
-        colCardClone.querySelector('#cardTitle' + newId).innerHTML = element.name;
-
-        colCardClone.querySelector('#cardPrice').id = 'cardPrice' + newId;
-        colCardClone.querySelector('#cardPrice' + newId).innerHTML = element.price + ' €';
-
-        colCardClone.querySelector('#cardContent').id = 'cardContent' + newId;
-        colCardClone.querySelector('#cardContent' + newId).innerHTML = element.infos;
-
-        // on incrémente l'id
-        newId++
-    });
-};
+            // on incrémente l'id
+            newId++
+        })
+    }
+});
