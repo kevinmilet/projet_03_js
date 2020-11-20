@@ -57,7 +57,7 @@ categories.forEach(elements => {
             // on affiche l'image du produit
             colCardClone.querySelector('#cardImg').id = 'cardImg' + newId;
             colCardClone.querySelector('#cardImg' + newId).src = `assets/img/${item.img}`;
-            // on afiiche le nom du produit
+            // on affiche le nom du produit
             colCardClone.querySelector('#cardTitle').id = 'cardTitle' + newId;
             colCardClone.querySelector('#cardTitle' + newId).innerHTML = item.name;
             // on affiche le prix du produit
@@ -80,12 +80,15 @@ categories.forEach(elements => {
 
             addToCartBtn.forEach(element => {
                 element.onclick = function () {
-console.log(products)
-                    addedItem = element.getAttribute('data-id');
 
-                    cart.push(addedItem, item.name, item.price);
+                    item = element.getAttribute('data-id');
+
+                    addedItem = products.filter(product => product.ref == item);
+
+                    cart.push(addedItem[0]);
 
                     console.log(cart);
+                    // console.log(cart[1].name +'...'+cart[1].price+'...'+cart[1].ref);
                 };
             });
 
