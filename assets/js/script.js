@@ -73,6 +73,8 @@ fetch(productCatalog)
 // afficher seulement les entrées
 startersBtn.onclick = function () {
 
+    document.querySelector('.row').innerHTML = '';
+
     let productsStarters = [];
 
     // on filtre le tableau entier pour ne garder que la catégorie 'starters'
@@ -113,6 +115,8 @@ startersBtn.onclick = function () {
 
 // afficher seulement les plats
 dishesBtn.onclick = function () {
+
+    document.querySelector('.row').innerHTML = '';
 
     let productsDishes = [];
 
@@ -155,6 +159,8 @@ dishesBtn.onclick = function () {
 // afficher seulement les desserts
 dessertsBtn.onclick = function () {
 
+    document.querySelector('.row').innerHTML = '';
+
     let productsDesserts = [];
 
     // on filtre le tableau entier pour ne garder que la catégorie 'starters'
@@ -195,6 +201,8 @@ dessertsBtn.onclick = function () {
 
 // afficher seulement les boissons
 drinksBtn.onclick = function () {
+
+    document.querySelector('.row').innerHTML = '';
 
     let productsDrinks = [];
 
