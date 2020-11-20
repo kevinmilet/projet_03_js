@@ -64,6 +64,10 @@ categories.forEach(elements => {
             colCardClone.querySelector('#cardContent').id = 'cardContent' + newId;
             colCardClone.querySelector('#cardContent' + newId).innerHTML = item.infos;
 
+            colCardClone.querySelector('#cardBtn').id = 'cardBtn' + newId;
+            colCardClone.querySelector('#cardBtn' + newId).dataset = item.ref;
+            console.log(colCardClone.querySelector('#cardBtn' + newId).dataset = item.ref)
+
             // on incrémente l'id
             newId++
         })
