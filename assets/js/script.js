@@ -76,14 +76,12 @@ categories.forEach(elements => {
 
             let addToCartBtn = document.querySelectorAll('#cardBtn' + newId);
 
-            console.log(addToCartBtn)
+            
 
             addToCartBtn.forEach(element => {
                 element.onclick = function () {
-
+console.log(products)
                     addedItem = element.getAttribute('data-id');
-
-                    console.log(addedItem);
 
                     cart.push(addedItem, item.name, item.price);
 
