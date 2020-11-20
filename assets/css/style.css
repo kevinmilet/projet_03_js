@@ -2,7 +2,8 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     width: 100%;
     padding: 0;
     margin: 0;
@@ -13,7 +14,8 @@ html, body {
     padding-right: 0;
 }
 
-h1, h2 {
+h1,
+h2 {
     color: #FFF;
     font-family: 'Raleway', sans-serif;
 }
@@ -27,7 +29,8 @@ img {
     height: auto;
 }
 
-.navbar-brand, .nav-link {
+.navbar-brand,
+.nav-link {
     font-family: 'Railway', sans-serif;
     text-transform: uppercase;
 }
@@ -51,4 +54,9 @@ nav img {
 .footer {
     background: grey;
     margin-top: 20px;
+}
+
+#rowcontent {
+
+    display: none;
 }
