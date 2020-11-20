@@ -12,6 +12,9 @@ const productCatalog = 'assets/json/alafut_products_catalog.json';
 // initialisation variables pour les tableaux
 let products = [];
 let productsCat = [];
+let addToCartBtn = [];
+let cart = [];
+let addedItem = 0;
 
 
 // initialisation de la variable qui incrémentera les ids de cartes
@@ -67,8 +70,31 @@ categories.forEach(elements => {
             colCardClone.querySelector('#cardBtn').id = 'cardBtn' + newId;
             colCardClone.querySelector('#cardBtn' + newId).setAttribute('data-id', item.ref);
 
+            //
+            // Ajout au tableau panier
+            //
+
+            let addToCartBtn = document.querySelectorAll('#cardBtn' + newId);
+
+            console.log(addToCartBtn)
+
+            addToCartBtn.forEach(element => {
+                element.onclick = function () {
+
+                    addedItem = element.getAttribute('data-id');
+
+                    console.log(addedItem);
+
+                    cart.push(addedItem, item.name, item.price);
+
+                    console.log(cart);
+                };
+            });
+
             // on incrémente l'id
             newId++
+
+
         })
     }
 });
