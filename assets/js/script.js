@@ -63,6 +63,9 @@ categories.forEach(elements => {
             // on affiche le descrition du produit
             colCardClone.querySelector('#cardContent').id = 'cardContent' + newId;
             colCardClone.querySelector('#cardContent' + newId).innerHTML = item.infos;
+            // on ajoute la référence sur le bouton grâce au data-id
+            colCardClone.querySelector('#cardBtn').id = 'cardBtn' + newId;
+            colCardClone.querySelector('#cardBtn' + newId).setAttribute('data-id', item.ref);
 
             // on incrémente l'id
             newId++
