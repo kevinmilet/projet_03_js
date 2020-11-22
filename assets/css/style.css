@@ -39,12 +39,54 @@ nav img {
 
 .cover {
     width: 100%;
-    height: 900px;
+    height: 750px;
     background: url("../img/restaurant-interior.jpg") no-repeat center fixed;
     background-size: cover;
 }
 
+.btn {
+    border-radius: .1rem;
+}
+
+.btn-primary {
+    color: #FFF;
+    background-color: #FF9419;
+    border-color: #FF9419;
+}
+
+.btn-primary:hover {
+    color: #FF9419;
+    background-color: #FFF;
+    border-color: #FF9419;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #FF9419;
+    border-color: #FF9419;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+    color: #fff;
+    background-color: #FF9419;
+    border-color: #FF9419;
+    box-shadow: 0 0 0 0.1rem rgba(60, 65, 70, 0.5);
+}
+
+.card {
+    border-radius: 0;
+}
+
+.card-img, .card-img-top {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
 #colCard {
+    display: none;
+}
+
+#rowContent {
     display: none;
 }
 

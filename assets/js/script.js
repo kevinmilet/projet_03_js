@@ -24,6 +24,9 @@ let newId = 0;
 
 let categories = document.querySelectorAll('#categoriesBtn a');
 
+// init itm
+let itm = document.querySelector("#rowContent");
+
 // on récupère le fichier json
 fetch(productCatalog)
     .then(response => response.json())
@@ -78,7 +81,7 @@ categories.forEach(elements => {
             let addToCartBtn = document.querySelectorAll('#cardBtn' + newId);
 
             // on parcours le tableau renvoyé par querySelectorAll
-            
+
             addToCartBtn.forEach(element => {
                 element.onclick = function () {
 
@@ -92,22 +95,6 @@ categories.forEach(elements => {
                     cart.push(addedItem[0]);
 
                     console.log(cart)
-                    
-                    // on parcours le tableau cart pour pouvoir afficher chaque produit
-                    // avec son prix et sa référence dans le panier
-                    cart.forEach((element, index) => {
-                        let itm = document.querySelector("#rowContent");
-                        //concaténer row content avec mon index
-                    
-                        document.querySelector("#rowContent .ref").innerHTML = element.ref;
-                        document.querySelector("#rowContent .name").innerHTML = element.name;
-                        document.querySelector("#rowContent .price").innerHTML = element.price;
-                        let cln = itm.cloneNode(true);
-                        cln.id = "rowContent" + index;
-                        console.log(cln);
-                        document.querySelector("#clone").appendChild(cln);
-                    
-                    });
                 };
             });
 
@@ -118,3 +105,32 @@ categories.forEach(elements => {
         })
     }
 });
+
+
+//
+// remplissage du panier dans la modale
+// au click sur le bouton panier
+//
+
+let cartBtn = document.querySelector('#cartBtn');
+
+cartBtn.addEventListener('click', fillModal);
+
+function fillModal() {
+
+    // on parcours le tableau cart pour pouvoir afficher chaque produit
+    // avec son prix et sa référence dans le panier
+    cart.forEach((element, index) => {
+
+        //concaténer row content avec mon index
+        //console.log(itm);
+        document.querySelector("#rowContent .ref").innerHTML = element.ref;
+        document.querySelector("#rowContent .name").innerHTML = element.name;
+        document.querySelector("#rowContent .price").innerHTML = element.price;
+        let cln = itm.cloneNode(true);
+        cln.id = "rowContent" + index;
+        console.log(cln);
+        document.querySelector("#clone").appendChild(cln);
+
+    });
+}
