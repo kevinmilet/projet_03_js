@@ -113,7 +113,6 @@ categories.forEach(elements => {
 //
 
 let cartBtn = document.querySelector('#cartBtn');
-
 cartBtn.addEventListener('click', fillModal);
 
 function fillModal() {
@@ -123,14 +122,22 @@ function fillModal() {
     cart.forEach((element, index) => {
 
         //concaténer row content avec mon index
-        //console.log(itm);
         document.querySelector("#rowContent .ref").innerHTML = element.ref;
         document.querySelector("#rowContent .name").innerHTML = element.name;
         document.querySelector("#rowContent .price").innerHTML = element.price;
         let cln = itm.cloneNode(true);
         cln.id = "rowContent" + index;
-        console.log(cln);
         document.querySelector("#clone").appendChild(cln);
 
     });
+}
+
+
+//
+// Vider le panier quand on clique sur 'payer la commande'
+//
+
+let orderBtn = document.querySelector('#orderBtn');
+orderBtn.onclick = function() {
+    cart = [];
 }

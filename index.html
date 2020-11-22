@@ -113,21 +113,32 @@
 
                         <!--première row -->
                         <div class="row" id="rowTitle">
-                            <div class="col text-light bg-dark">Références</div>
+                            <div class="col text-light bg-dark"></div>
+                            <div class="col text-light bg-dark">Réf</div>
                             <div class="col text-light bg-dark">Produit</div>
                             <div class="col text-light bg-dark">Prix</div>
+                            <div class="col text-light bg-dark">Qté</div>
+                            <div class="col text-light bg-dark"></div>
+                            <div class="col text-light bg-dark"></div>
+
                         </div>
                         <div class="row" id="rowContent">
+                            <div class="col delProduct"><i class="far fa-trash-alt"></i></div>
                             <div class="col ref"></div>
                             <div class="col name"></div>
                             <div class="col price"></div>
+                            <div class="col quantity"></div>
+                            <div class="col delOneProduct"><i class="fas fa-minus"></i></div>
+                            <div class="col addOneProduct"><i class="fas fa-plus"></i></div>
                         </div>
 
                         <div id="clone"></div>
 
+                        <div class="cartTotal">Total: </div>
+
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Payer la commande</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="orderBtn">Payer la commande</button>
                     </div>
                 </div>
             </div>
