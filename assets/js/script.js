@@ -1,6 +1,3 @@
-//
-// FONCTION DE TRI DES CATEGORIES
-//
 // Récupération des données pour les afficher dans les cartes
 // en fonction des catégories
 
@@ -15,7 +12,8 @@ let productsCat = [];
 let addToCartBtn = [];
 let cart = [];
 let addedItem = 0;
-
+let cartTotal = 0;
+let quantity = 0;
 
 // initialisation de la variable qui incrémentera les ids de cartes
 let newId = 0;
@@ -23,8 +21,10 @@ let newId = 0;
 // initialisation des boutons
 
 let categories = document.querySelectorAll('#categoriesBtn a');
+let cartBtn = document.querySelector('#cartBtn');
+let delProduct = document.querySelector('#delProduct');
 
-// init itm
+// initialisation du contenu des lignes du panier
 let itm = document.querySelector("#rowContent");
 
 // on récupère le fichier json
@@ -34,6 +34,9 @@ fetch(productCatalog)
         products = response;
     });
 
+//
+// FONCTION DE TRI DES CATEGORIES
+//
 categories.forEach(elements => {
 
     elements.onclick = function () {
@@ -106,38 +109,61 @@ categories.forEach(elements => {
     }
 });
 
-
 //
 // remplissage du panier dans la modale
 // au click sur le bouton panier
 //
 
-let cartBtn = document.querySelector('#cartBtn');
+// listener sur le bouton panier dans le menu
 cartBtn.addEventListener('click', fillModal);
 
+// fonction de remplissage du panier
+// avec affichage du montant total des produits
 function fillModal() {
 
     // on parcours le tableau cart pour pouvoir afficher chaque produit
     // avec son prix et sa référence dans le panier
     cart.forEach((element, index) => {
 
-        //concaténer row content avec mon index
-        document.querySelector("#rowContent .ref").innerHTML = element.ref;
-        document.querySelector("#rowContent .name").innerHTML = element.name;
-        document.querySelector("#rowContent .price").innerHTML = element.price;
-        let cln = itm.cloneNode(true);
-        cln.id = "rowContent" + index;
-        document.querySelector("#clone").appendChild(cln);
+        if (document.querySelector('#clone') != null) {
 
+            document.querySelector("#rowContent .ref").innerHTML = element.ref;
+            document.querySelector("#rowContent .name").innerHTML = element.name;
+            document.querySelector("#rowContent .price").innerHTML = element.price;
+            let cln = itm.cloneNode(true);
+            cln.id = "rowContent" + index;
+            document.querySelector("#clone").appendChild(cln);
+        } else {
+            quantity += quantity;
+            document.querySelector('#quantity').innerHTML = quantity;
+        };
+
+
+
+        // affichage du total à payer
+        cartTotal += parseFloat(element.price);
+
+        document.querySelector('#cartTotal').innerHTML = `${cartTotal} €`;
     });
 }
 
+//
+// supprimer un prodduit dans la liste de produit
+//
+
+let parentProduct = document.querySelector('#clone').parentNode;
+
+delProduct.addEventListener('click', removeProduct);
+
+function removeProduct() {
+    parentProduct.removeChild(cln);
+}
 
 //
 // Vider le panier quand on clique sur 'payer la commande'
 //
 
 let orderBtn = document.querySelector('#orderBtn');
-orderBtn.onclick = function() {
+orderBtn.onclick = function () {
     cart = [];
 }

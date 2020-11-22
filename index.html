@@ -19,6 +19,7 @@
 <body>
     <div class="container-fluid">
 
+        <!-- Barre de navigation -->
         <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light fixed-top">
             <a href="#" class="navbar-brand mr-auto">
                 <img src="assets/img/logo1.png" alt="" class="d-inline align-top" alt="" loading="lazy">
@@ -58,16 +59,21 @@
 
                     </li>
                 </ul>
-                    
+
                 </ul>
             </div>
         </nav>
         <!-- Container du cover -->
         <section class="cover">
-            <!-- Barre de navigation -->
 
 
-            <h1>A la fût</h1>
+
+            <h1 class="text-center justify-content-center pt-3">A la Fût</h1>
+            <div class="d-flex justify-content-center coverLogo">
+                <img src="assets/img/logo1.png" alt="Logo A la Fût" class="pt-3">
+            </div>
+
+
         </section>
 
         <!-- Affichage du contenu, card -->
@@ -113,43 +119,48 @@
 
                         <!--première row -->
                         <div class="row" id="rowTitle">
-                            <div class="col text-light bg-dark"></div>
-                            <div class="col text-light bg-dark">Réf</div>
-                            <div class="col text-light bg-dark">Produit</div>
-                            <div class="col text-light bg-dark">Prix</div>
-                            <div class="col text-light bg-dark">Qté</div>
-                            <div class="col text-light bg-dark"></div>
-                            <div class="col text-light bg-dark"></div>
+                            <h5 class="col text-light bg-dark"></h5>
+                            <h5 class="col text-light bg-dark">Réf</h5>
+                            <h5 class="col text-light bg-dark">Produit</h5>
+                            <h5 class="col text-light bg-dark">Prix</h5>
+                            <h5 class="col text-light bg-dark">Qté</h5>
 
                         </div>
+
                         <div class="row" id="rowContent">
-                            <div class="col delProduct"><i class="far fa-trash-alt"></i></div>
+                            <button type="button" class="btn col delProduct"><i class="far fa-trash-alt"
+                                    id="delProduct"></i></button>
                             <div class="col ref"></div>
                             <div class="col name"></div>
                             <div class="col price"></div>
-                            <div class="col quantity"></div>
-                            <div class="col delOneProduct"><i class="fas fa-minus"></i></div>
-                            <div class="col addOneProduct"><i class="fas fa-plus"></i></div>
+                            <div class="col quantity"><span><i class="fas fa-minus delOneProduct mr-1"></i></span><span
+                                    id="quantity">0</span><span><i class="fas fa-plus addOneProduct ml-1"></i></span>
+                            </div>
                         </div>
 
                         <div id="clone"></div>
 
-                        <div class="cartTotal">Total: </div>
-
                     </div>
+
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="orderBtn">Payer la commande</button>
+                        <div class="cartTotal mr-auto">Total: <span id="cartTotal"></span></div>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="orderBtn">Payer la
+                            commande</button>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Footer -->
+        <!-- Footer -->
         <footer class="footer">
-            <h2>Footer</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit amet, alias doloremque modi quia nesciunt,
-                aliquid maiores corporis nisi eaque molestias necessitatibus. Minima corporis repudiandae possimus enim
-                dignissimos, voluptatum tempora?</p>
+
+            <!-- Copyright -->
+            <div class="text-center py-3">
+                <p>2020 A la fût</p>
+            </div>
+            <!-- Copyright -->
+
         </footer>
     </div>
 

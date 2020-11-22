@@ -4,7 +4,8 @@
         "name": "Salade d'été",
         "infos": "Salade de roquette, tomates cerises, mozzarella et jambon cru",
         "price": "17.99",
-        "img": "Salade1.jpeg"
+        "img": "Salade1.jpeg",
+        "count": 0
     },
     {
         "ref": "s002",
@@ -12,7 +13,8 @@
         "name": "Salade fraicheur",
         "infos": "Salade de cresson à la mimolette",
         "price": "17.99",
-        "img": "Salade2.jpeg"
+        "img": "Salade2.jpeg",
+        "count": 0
     },
     {
         "ref": "s003",
@@ -20,7 +22,8 @@
         "name": "Salade César",
         "infos": "Salade de légumes de printemps, oeuf mollet et parmesan",
         "price": "18.99",
-        "img": "Salade3.jpg"
+        "img": "Salade3.jpg",
+        "count": 0
     },
     {
         "ref": "s004",
@@ -28,7 +31,8 @@
         "name": "Salade Gourmet",
         "infos": "Salade de concombres et radis au Cottage Cheese",
         "price": "18.99",
-        "img": "Salade4.jpg"
+        "img": "Salade4.jpg",
+        "count": 0
     },
     {
         "ref": "s005",
@@ -36,7 +40,8 @@
         "name": "Oeufs Frontonnaise",
         "infos": "Œuf de poule noire de Caussade pochée à la frontonnaise",
         "price": "14.99",
-        "img": "Oeuf1.jpg"
+        "img": "Oeuf1.jpg",
+        "count": 0
     },
     {
         "ref": "s006",
@@ -44,7 +49,8 @@
         "name": "Oeufs Mollets",
         "infos": "Œuf mollet croustillant, polenta et tuile de parmesan",
         "price": "14.99",
-        "img": "Oeuf2.jpg"
+        "img": "Oeuf2.jpg",
+        "count": 0
     },
     {
         "ref": "s007",
@@ -52,7 +58,8 @@
         "name": "Oeufs Pochés aux lentilles",
         "infos": "Oeufs pochés aux lentilles vertes de Goudou Fraysse",
         "price": "15.99",
-        "img": "Oeuf3.jpg"
+        "img": "Oeuf3.jpg",
+        "count": 0
     },
     {
         "ref": "s008",
@@ -60,7 +67,8 @@
         "name": "Oeufs Meurette",
         "infos": "Oeufs en meurette",
         "price": "15.99",
-        "img": "Oeuf4.jpg"
+        "img": "Oeuf4.jpg",
+        "count": 0
     },
     {
         "ref": "s009",
@@ -68,7 +76,8 @@
         "name": "Foie gras caramel de cidre",
         "infos": "Foie gras poêlé au caramel de cidre, tombée de cèpes au cumin, shiso rouge",
         "price": "25.99",
-        "img": "FoieGras1.jpg"
+        "img": "FoieGras1.jpg",
+        "count": 0
     },
     {
         "ref": "s010",
@@ -76,7 +85,8 @@
         "name": "Foie gras aux figues",
         "infos": "Foie gras de canard frais de Châlosse grillé aux figues rôties",
         "price": "25.99",
-        "img": "FoieGras2.jpg"
+        "img": "FoieGras2.jpg",
+        "count": 0
     },
     {
         "ref": "s011",
@@ -84,7 +94,8 @@
         "name": "Foie gras poché",
         "infos": "Foie gras poché au vin rouge",
         "price": "22.99",
-        "img": "FoieGras3.jpg"
+        "img": "FoieGras3.jpg",
+        "count": 0
     },
     {
         "ref": "s012",
@@ -92,7 +103,8 @@
         "name": "Foie gras créme de chataignes",
         "infos": "Foie Gras de Canard mariné à la Crème de Châtaignes et Artichaut",
         "price": "23.99",
-        "img": "FoieGras4.jpg"
+        "img": "FoieGras4.jpg",
+        "count": 0
     },
     {
         "ref": "d001",
@@ -100,7 +112,8 @@
         "name": "Canard",
         "infos": "Magret de canard au miel et vinaigre balsamique",
         "price": "29.99",
-        "img": "Canard.jpg"
+        "img": "Canard.jpg",
+        "count": 0
     },
     {
         "ref": "d002",
@@ -108,7 +121,8 @@
         "name": "Cordon Bleu",
         "infos": "Cordon bleu revisité, sauce à la moutarde d’Alsace",
         "price": "25.99",
-        "img": "CordonBleu.jpg"
+        "img": "CordonBleu.jpg",
+        "count": 0
     },
     {
         "ref": "d003",
@@ -116,7 +130,8 @@
         "name": "Porc",
         "infos": "Carré de porc aux épices",
         "price": "25.99",
-        "img": "Porc.jpg"
+        "img": "Porc.jpg",
+        "count": 0
     },
     {
         "ref": "d004",
@@ -124,7 +139,8 @@
         "name": "Seiches",
         "infos": "Seiches à la plancha et son embeurré de pomme de terre aux champignons",
         "price": "25.99",
-        "img": "Seiches.jpg"
+        "img": "Seiches.jpg",
+        "count": 0
     },
     {
         "ref": "d005",
@@ -132,7 +148,8 @@
         "name": "Lotte",
         "infos": "Lotte à la crème parfumée au curry, fondue de poireaux, moules de bouchot, concassé de tomates",
         "price": "24.99",
-        "img": "Lotte.jpg"
+        "img": "Lotte.jpg",
+        "count": 0
     },
     {
         "ref": "d006",
@@ -140,7 +157,8 @@
         "name": "Saint-Jacques",
         "infos": "Brochettes de coquilles Saint-Jacques rôties a la citronnelle fraîche, fondue d’endives au citron vert",
         "price": "22.99",
-        "img": "SaintJacques.jpg"
+        "img": "SaintJacques.jpg",
+        "count": 0
     },
     {
         "ref": "d007",
@@ -148,7 +166,8 @@
         "name": "Cabillaud",
         "infos": "Dos de cabillaud rôti, salade de légumes d’été, vinaigrette aux herbes.",
         "price": "25.99",
-        "img": "Cabillaud.jpg"
+        "img": "Cabillaud.jpg",
+        "count": 0
     },
     {
         "ref": "d008",
@@ -156,7 +175,8 @@
         "name": "Burger Healthy",
         "infos": "Une recette pour faire un hamburger plus léger",
         "price": "22.99",
-        "img": "Healty.jpg"
+        "img": "Healty.jpg",
+        "count": 0
     },
     {
         "ref": "d009",
@@ -164,7 +184,8 @@
         "name": "Burger Game Of Thrones",
         "infos": "Un burger pour regarder tranquillement Game Of Thrones",
         "price": "23.99",
-        "img": "GOT.jpg"
+        "img": "GOT.jpg",
+        "count": 0
     },
     {
         "ref": "d010",
@@ -172,7 +193,8 @@
         "name": "Burger raclette",
         "infos": "La recette parfaite pour l’hiver : le burger raclette",
         "price": "25.99",
-        "img": "BurgerRaclette.jpg"
+        "img": "BurgerRaclette.jpg",
+        "count": 0
     },
     {
         "ref": "d011",
@@ -180,7 +202,8 @@
         "name": "Hamburger Au Poulet Frit",
         "infos": "La recette du hamburger avec du poulet frit dedans",
         "price": "24.99",
-        "img": "BurgerPoulet.jpg"
+        "img": "BurgerPoulet.jpg",
+        "count": 0
     },
     {
         "ref": "d012",
@@ -188,7 +211,8 @@
         "name": "Pizza Lenna",
         "infos": "Poulet rôti, jambon, pommes de terre, oignons, emmental",
         "price": "18.99",
-        "img": "Lenna.jpg"
+        "img": "Lenna.jpg",
+        "count": 0
     },
     {
         "ref": "d013",
@@ -196,7 +220,8 @@
         "name": "Pizza Européenne",
         "infos": "Thon, jambon, chorizo, artichaut, oignons, champignons, poivrons, mozarella",
         "price": "19.99",
-        "img": "Europeenne.jpg"
+        "img": "Europeenne.jpg",
+        "count": 0
     },
     {
         "ref": "d014",
@@ -204,7 +229,8 @@
         "name": "Pizza Chèvre miel",
         "infos": "MOZZARELLA,CHEVRE,MIEL,ROQUETTE.",
         "price": "17.99",
-        "img": "Miel.jpg"
+        "img": "Miel.jpg",
+        "count": 0
     },
     {
         "ref": "d015",
@@ -212,7 +238,8 @@
         "name": "Pizza Savoyarde",
         "infos": "Lardons, pommes de terre, oignons, reblochon, emmental",
         "price": "19.99",
-        "img": "Savoyarde.jpg"
+        "img": "Savoyarde.jpg",
+        "count": 0
     },
     {
         "ref": "ds001",
@@ -220,7 +247,8 @@
         "name": "Tarte aux Fraises",
         "infos": "Tarte aux fraises déstructurée",
         "price": "10.99",
-        "img": "Fraise.jpeg"
+        "img": "Fraise.jpeg",
+        "count": 0
     },
     {
         "ref": "ds002",
@@ -228,7 +256,8 @@
         "name": "Tarte Choco-Caramel",
         "infos": "Tarte aux biscuits, chocolat noir et caramel",
         "price": "12.99",
-        "img": "ChocoCaramel.jpg"
+        "img": "ChocoCaramel.jpg",
+        "count": 0
     },
     {
         "ref": "ds003",
@@ -236,7 +265,8 @@
         "name": "Tarte Noix",
         "infos": "Tartelette aux noix et caramel beurre salé",
         "price": "12.99",
-        "img": "NoixCaramel.jpg"
+        "img": "NoixCaramel.jpg",
+        "count": 0
     },
     {
         "ref": "ds004",
@@ -244,7 +274,8 @@
         "name": "Choux",
         "infos": "Choux croustillants à la crème de safran du Quercy",
         "price": "10.99",
-        "img": "Choux.jpg"
+        "img": "Choux.jpg",
+        "count": 0
     },
     {
         "ref": "ds005",
@@ -252,7 +283,8 @@
         "name": "Croquant",
         "infos": "Croquant caramel aux pommes et safran de Montauban de chez Julie Martin, mousse au chasselas et glace safran",
         "price": "13.99",
-        "img": "Croquant.jpg"
+        "img": "Croquant.jpg",
+        "count": 0
     },
     {
         "ref": "ds006",
@@ -260,7 +292,8 @@
         "name": "Soufflé",
         "infos": "Soufflé au Cognac",
         "price": "12.99",
-        "img": "Souffle.jpg"
+        "img": "Souffle.jpg",
+        "count": 0
     },
     {
         "ref": "ds007",
@@ -268,7 +301,8 @@
         "name": "Glace",
         "infos": "Glace épicée chocolat-café",
         "price": "9.99",
-        "img": "ChocoCafe.jpg"
+        "img": "ChocoCafe.jpg",
+        "count": 0
     },
     {
         "ref": "ds008",
@@ -276,7 +310,8 @@
         "name": "Glace",
         "infos": "Glace au foie gras",
         "price": "13.99",
-        "img": "FoieGras.jpg"
+        "img": "FoieGras.jpg",
+        "count": 0
     },
     {
         "ref": "ds009",
@@ -284,7 +319,8 @@
         "name": "Glace",
         "infos": "Glace au yaourt et sucre d’orge",
         "price": "9.99",
-        "img": "Yaourt.jpg"
+        "img": "Yaourt.jpg",
+        "count": 0
     },
     {
         "ref": "ds010",
@@ -292,7 +328,8 @@
         "name": "Glace",
         "infos": "Sorbet poire pochée-amande",
         "price": "10.99",
-        "img": "PoireAmande.jpg"
+        "img": "PoireAmande.jpg",
+        "count": 0
     },
     {
         "ref": "dr001",
@@ -300,7 +337,8 @@
         "name": "Vin rouge (Château Latour)",
         "infos": "Vin avec une fraîcheur mentholée en bouche ainsi  qu'une allonge superbe",
         "price": "89.99",
-        "img": "ChateauLatour.png"
+        "img": "ChateauLatour.png",
+        "count": 0
     },
     {
         "ref": "dr002",
@@ -308,7 +346,8 @@
         "name": "Vin rouge (Chateau Laronde)",
         "infos": "C'est un vin rond sur le fruit . La robe est dense d'un beau rubis profond, nez de fruits rouges avec une dominante de cassis",
         "price": "19.99",
-        "img": "ChateauLaronde.jpg"
+        "img": "ChateauLaronde.jpg",
+        "count": 0
     },
     {
         "ref": "dr003",
@@ -316,7 +355,8 @@
         "name": "Vin blanc (Riesling d'Alsace)",
         "infos": "Vin élégant et frais finement aromatique",
         "price": "19.99",
-        "img": "RieslingAlsace.jpg"
+        "img": "RieslingAlsace.jpg",
+        "count": 0
     },
     {
         "ref": "dr004",
@@ -324,7 +364,8 @@
         "name": "Vin blanc (Sylvaner d'Alsace)",
         "infos": "",
         "price": "19.99",
-        "img": "SylvanerAlsace.jpg"
+        "img": "SylvanerAlsace.jpg",
+        "count": 0
     },
     {
         "ref": "dr005",
@@ -332,7 +373,8 @@
         "name": "Bière blonde",
         "infos": "",
         "price": "7.99",
-        "img": "Despe.jpg"
+        "img": "Despe.jpg",
+        "count": 0
     },
     {
         "ref": "dr006",
@@ -340,7 +382,8 @@
         "name": "Bière brune",
         "infos": "",
         "price": "7.99",
-        "img": "Anosteke.jpg"
+        "img": "Anosteke.jpg",
+        "count": 0
     },
     {
         "ref": "dr007",
@@ -348,7 +391,8 @@
         "name": "Bière Ambrée",
         "infos": "",
         "price": "7.99",
-        "img": "Brewdog.jpg"
+        "img": "Brewdog.jpg",
+        "count": 0
     },
     {
         "ref": "dr008",
@@ -356,7 +400,8 @@
         "name": "Bière Blanche",
         "infos": "",
         "price": "7.99",
-        "img": "TripleKarmeliet.jpg"
+        "img": "TripleKarmeliet.jpg",
+        "count": 0
     },
     {
         "ref": "dr009",
@@ -364,7 +409,8 @@
         "name": "Jus de fruit",
         "infos": "",
         "price": "5",
-        "img": "JusOrange.jpg"
+        "img": "JusOrange.jpg",
+        "count": 0
     },
     {
         "ref": "dr010",
@@ -372,7 +418,8 @@
         "name": "Coca",
         "infos": "",
         "price": "5",
-        "img": "Coca.png"
+        "img": "Coca.png",
+        "count": 0
     },
     {
         "ref": "dr011",
@@ -380,7 +427,8 @@
         "name": "Perrier",
         "infos": "",
         "price": "5",
-        "img": "Orangina.jpg"
+        "img": "Orangina.jpg",
+        "count": 0
     },
     {
         "ref": "dr012",
@@ -388,6 +436,7 @@
         "name": "Orangina",
         "infos": "",
         "price": "5",
-        "img": "Perrier.jpg"
+        "img": "Perrier.jpg",
+        "count": 0
     }
 ]
