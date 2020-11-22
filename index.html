@@ -19,48 +19,53 @@
 <body>
     <div class="container-fluid">
 
+        <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light fixed-top">
+            <a href="#" class="navbar-brand mr-auto">
+                <img src="assets/img/logo1.png" alt="" class="d-inline align-top" alt="" loading="lazy">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav ml-auto" id="categoriesBtn">
+                    <li class="nav-item">
+                        <a href="#productsContainer" class="nav-link" id="starters">Entrées</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#productsContainer" class="nav-link" id="dishes">Plats</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#productsContainer" class="nav-link" id="desserts">Desserts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#productsContainer" class="nav-link" id="drinks">Boissons</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="" class="nav-link dropdown-toggle" id="navbarDropdownMineLink" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Formules</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Entrée + Plat</a>
+                            <a class="dropdown-item" href="#">Plat + Dessert</a>
+                            <a class="dropdown-item" href="#">Entrée + Plat + Dessert</a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item align-top" id="navCartBtn">
+                        <button type="button" class="btn" data-toggle="modal" data-target="#cartModal"><i
+                                class="fas fa-shopping-basket"></i></button>
 
+                    </li>
+                </ul>
+                    
+                </ul>
+            </div>
+        </nav>
         <!-- Container du cover -->
         <section class="cover">
             <!-- Barre de navigation -->
-            <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-                <a href="#" class="navbar-brand">
-                    <img src="assets/img/logo1.png" alt="" class="d-inline align-top" alt="" loading="lazy">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav" id="categoriesBtn">
-                        <li class="nav-item">
-                            <a href="#productsContainer" class="nav-link" id="starters">Entrées</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#productsContainer" class="nav-link" id="dishes">Plats</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#productsContainer" class="nav-link" id="desserts">Desserts</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#productsContainer" class="nav-link" id="drinks">Boissons</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a href="" class="nav-link dropdown-toggle" id="navbarDropdownMineLink" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Formules</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">Entrée + Plat</a>
-                                <a class="dropdown-item" href="#">Plat + Dessert</a>
-                                <a class="dropdown-item" href="#">Entrée + Plat + Dessert</a>
-                            </div>
-                        </li>
-                        <li class="nav-item" id="navCartBtn">
-                            <button type="button" class="btn" data-toggle="modal" data-target="#cartModal"><i class="fas fa-shopping-basket"></i></button>
 
-                        </li>
-                    </ul>
-                </div>
-            </nav>
 
             <h1>A la fût</h1>
         </section>
@@ -97,36 +102,36 @@
         <!-- Modale Panier -->
         <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModal" aria-hidden="true">
             <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Votre Panier</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-
-                    <!--première row -->
-                    <div class="row" id="rowTitle">
-                        <div class="col text-light bg-dark">Références</div>
-                        <div class="col text-light bg-dark">Produit</div>
-                        <div class="col text-light bg-dark">Prix</div>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Votre Panier</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                    <div class="row" id="rowContent">
-                        <div  class="col ref"></div>
-                        <div  class="col name"></div>
-                        <div  class="col price"></div>
+                    <div class="modal-body">
+
+                        <!--première row -->
+                        <div class="row" id="rowTitle">
+                            <div class="col text-light bg-dark">Références</div>
+                            <div class="col text-light bg-dark">Produit</div>
+                            <div class="col text-light bg-dark">Prix</div>
+                        </div>
+                        <div class="row" id="rowContent">
+                            <div class="col ref"></div>
+                            <div class="col name"></div>
+                            <div class="col price"></div>
+                        </div>
+
+                        <div id="clone"></div>
+
                     </div>
-
-                    <div id="clone"></div>
-
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Payer la commande</button>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" data-dismiss="modal">Payer la commande</button>
-                </div>
-              </div>
             </div>
-          </div>
+        </div>
 
         <!-- Footer -->
         <footer class="footer">

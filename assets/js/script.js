@@ -91,6 +91,8 @@ categories.forEach(elements => {
                     // on ajoute le produit dans le nouveau tableau cart
                     cart.push(addedItem[0]);
 
+                    console.log(cart)
+                    
                     // on parcours le tableau cart pour pouvoir afficher chaque produit
                     // avec son prix et sa référence dans le panier
                     cart.forEach((element, index) => {
