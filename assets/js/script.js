@@ -93,10 +93,19 @@ categories.forEach(elements => {
 
                     // on parcours le tableau cart pour pouvoir afficher chaque produit
                     // avec son prix et sa référence dans le panier
-                    for (let i = 0; i < cart.length; i++) {
-                        console.log(cart[i].name +'...'+cart[i].price+'...'+cart[i].ref)
-                        document.querySelector('footer').innerHTML = cart[i].name +'...'+cart[i].price+'...'+cart[i].ref;
-                    }
+                    cart.forEach((element, index) => {
+                        let itm = document.querySelector("#rowContent");
+                        //concaténer row content avec mon index
+                    
+                        document.querySelector("#rowContent .ref").innerHTML = element.ref;
+                        document.querySelector("#rowContent .name").innerHTML = element.name;
+                        document.querySelector("#rowContent .price").innerHTML = element.price;
+                        let cln = itm.cloneNode(true);
+                        cln.id = "rowContent" + index;
+                        console.log(cln);
+                        document.querySelector("#clone").appendChild(cln);
+                    
+                    });
                 };
             });
 

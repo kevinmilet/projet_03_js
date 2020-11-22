@@ -55,7 +55,7 @@
                             </div>
                         </li>
                         <li class="nav-item" id="navCartBtn">
-                            <a href="#"><span><i class="fas fa-shopping-cart"></i></span></a>
+                            <button type="button" class="btn" data-toggle="modal" data-target="#cartModal"><i class="fas fa-shopping-basket"></i></button>
 
                         </li>
                     </ul>
@@ -93,6 +93,40 @@
             </div>
 
         </div>
+
+        <!-- Modale Panier -->
+        <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModal" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Votre Panier</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+
+                    <!--première row -->
+                    <div class="row" id="rowTitle">
+                        <div class="col text-light bg-dark">Références</div>
+                        <div class="col text-light bg-dark">Produit</div>
+                        <div class="col text-light bg-dark">Prix</div>
+                    </div>
+                    <div class="row" id="rowContent">
+                        <div  class="col ref"></div>
+                        <div  class="col name"></div>
+                        <div  class="col price"></div>
+                    </div>
+
+                    <div id="clone"></div>
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Payer la commande</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
         <!-- Footer -->
         <footer class="footer">
