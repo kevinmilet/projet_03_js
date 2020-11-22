@@ -74,21 +74,29 @@ categories.forEach(elements => {
             // Ajout au tableau panier
             //
 
+            // on récupère les id des boutons 'Ajouter' + nouvel id
             let addToCartBtn = document.querySelectorAll('#cardBtn' + newId);
 
+            // on parcours le tableau renvoyé par querySelectorAll
             
-
             addToCartBtn.forEach(element => {
                 element.onclick = function () {
 
+                    // et à chaque itération, on récupére la référence produit dans data-id
                     item = element.getAttribute('data-id');
 
+                    // on test le tableau pour trouver le bon produit avec la bonne référence
                     addedItem = products.filter(product => product.ref == item);
 
+                    // on ajoute le produit dans le nouveau tableau cart
                     cart.push(addedItem[0]);
 
-                    console.log(cart);
-                    // console.log(cart[1].name +'...'+cart[1].price+'...'+cart[1].ref);
+                    // on parcours le tableau cart pour pouvoir afficher chaque produit
+                    // avec son prix et sa référence dans le panier
+                    for (let i = 0; i < cart.length; i++) {
+                        console.log(cart[i].name +'...'+cart[i].price+'...'+cart[i].ref)
+                        document.querySelector('footer').innerHTML = cart[i].name +'...'+cart[i].price+'...'+cart[i].ref;
+                    }
                 };
             });
 
