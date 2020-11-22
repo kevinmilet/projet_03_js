@@ -1,6 +1,3 @@
-//
-// FONCTION DE TRI DES CATEGORIES
-//
 // Récupération des données pour les afficher dans les cartes
 // en fonction des catégories
 
@@ -12,7 +9,11 @@ const productCatalog = 'assets/json/alafut_products_catalog.json';
 // initialisation variables pour les tableaux
 let products = [];
 let productsCat = [];
-
+let addToCartBtn = [];
+let cart = [];
+let addedItem = 0;
+let cartTotal = 0;
+let quantity = 0;
 
 // initialisation de la variable qui incrémentera les ids de cartes
 let newId = 0;
@@ -20,6 +21,11 @@ let newId = 0;
 // initialisation des boutons
 
 let categories = document.querySelectorAll('#categoriesBtn a');
+let cartBtn = document.querySelector('#cartBtn');
+let delProduct = document.querySelector('#delProduct');
+
+// initialisation du contenu des lignes du panier
+let itm = document.querySelector("#rowContent");
 
 // on récupère le fichier json
 fetch(productCatalog)
@@ -28,6 +34,9 @@ fetch(productCatalog)
         products = response;
     });
 
+//
+// FONCTION DE TRI DES CATEGORIES
+//
 categories.forEach(elements => {
 
     elements.onclick = function () {
@@ -54,7 +63,7 @@ categories.forEach(elements => {
             // on affiche l'image du produit
             colCardClone.querySelector('#cardImg').id = 'cardImg' + newId;
             colCardClone.querySelector('#cardImg' + newId).src = `assets/img/${item.img}`;
-            // on afiiche le nom du produit
+            // on affiche le nom du produit
             colCardClone.querySelector('#cardTitle').id = 'cardTitle' + newId;
             colCardClone.querySelector('#cardTitle' + newId).innerHTML = item.name;
             // on affiche le prix du produit
@@ -67,8 +76,89 @@ categories.forEach(elements => {
             colCardClone.querySelector('#cardBtn').id = 'cardBtn' + newId;
             colCardClone.querySelector('#cardBtn' + newId).setAttribute('data-id', item.ref);
 
+            //
+            // Ajout au tableau panier
+            //
+
+            // on récupère les id des boutons 'Ajouter' + nouvel id
+            let addToCartBtn = document.querySelectorAll('#cardBtn' + newId);
+
+            // on parcours le tableau renvoyé par querySelectorAll
+
+            addToCartBtn.forEach(element => {
+                element.onclick = function () {
+
+                    // et à chaque itération, on récupére la référence produit dans data-id
+                    item = element.getAttribute('data-id');
+
+                    // on test le tableau pour trouver le bon produit avec la bonne référence
+                    addedItem = products.filter(product => product.ref == item);
+
+                    // on ajoute le produit dans le nouveau tableau cart
+                    cart.push(addedItem[0]);
+
+                    console.log(cart)
+                };
+            });
+
             // on incrémente l'id
             newId++
+
+
         })
     }
 });
+
+//
+// remplissage du panier dans la modale
+// au click sur le bouton panier
+//
+
+// listener sur le bouton panier dans le menu
+cartBtn.addEventListener('click', fillModal);
+
+// fonction de remplissage du panier
+// avec affichage du montant total des produits
+function fillModal() {
+
+    // on parcours le tableau cart pour pouvoir afficher chaque produit
+    // avec son prix et sa référence dans le panier
+    cart.forEach((element, index) => {
+
+        //concaténer row content avec mon index
+        document.querySelector("#rowContent .ref").innerHTML = element.ref;
+        document.querySelector("#rowContent .name").innerHTML = element.name;
+        document.querySelector("#rowContent .price").innerHTML = element.price;
+        let cln = itm.cloneNode(true);
+        cln.id = "rowContent" + index;
+        document.querySelector("#clone").appendChild(cln);
+//
+// supprimer un prodduit dans la liste de produit
+//
+
+
+// delProduct.addEventListener('click', removeProduct);
+
+delProduct.onclick = function () {
+
+    document.querySelector("#clone").removeChild(cln);
+    
+
+}
+        // affichage du total à payer
+        cartTotal += parseFloat(element.price);
+
+        document.querySelector('#cartTotal').innerHTML = `${cartTotal} €`;
+    });
+}
+
+
+
+//
+// Vider le panier quand on clique sur 'payer la commande'
+//
+
+let orderBtn = document.querySelector('#orderBtn');
+orderBtn.onclick = function() {
+    cart = [];
+}
