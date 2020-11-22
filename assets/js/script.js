@@ -125,21 +125,26 @@ function fillModal() {
     // avec son prix et sa référence dans le panier
     cart.forEach((element, index) => {
 
-        if (document.querySelector('#clone') != null) {
-
-            document.querySelector("#rowContent .ref").innerHTML = element.ref;
-            document.querySelector("#rowContent .name").innerHTML = element.name;
-            document.querySelector("#rowContent .price").innerHTML = element.price;
-            let cln = itm.cloneNode(true);
-            cln.id = "rowContent" + index;
-            document.querySelector("#clone").appendChild(cln);
-        } else {
-            quantity += quantity;
-            document.querySelector('#quantity').innerHTML = quantity;
-        };
+        //concaténer row content avec mon index
+        document.querySelector("#rowContent .ref").innerHTML = element.ref;
+        document.querySelector("#rowContent .name").innerHTML = element.name;
+        document.querySelector("#rowContent .price").innerHTML = element.price;
+        let cln = itm.cloneNode(true);
+        cln.id = "rowContent" + index;
+        document.querySelector("#clone").appendChild(cln);
+//
+// supprimer un prodduit dans la liste de produit
+//
 
 
+// delProduct.addEventListener('click', removeProduct);
 
+delProduct.onclick = function () {
+
+    document.querySelector("#clone").removeChild(cln);
+    
+
+}
         // affichage du total à payer
         cartTotal += parseFloat(element.price);
 
@@ -147,23 +152,13 @@ function fillModal() {
     });
 }
 
-//
-// supprimer un prodduit dans la liste de produit
-//
 
-let parentProduct = document.querySelector('#clone').parentNode;
-
-delProduct.addEventListener('click', removeProduct);
-
-function removeProduct() {
-    parentProduct.removeChild(cln);
-}
 
 //
 // Vider le panier quand on clique sur 'payer la commande'
 //
 
 let orderBtn = document.querySelector('#orderBtn');
-orderBtn.onclick = function () {
+orderBtn.onclick = function() {
     cart = [];
 }
