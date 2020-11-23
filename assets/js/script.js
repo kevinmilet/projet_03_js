@@ -121,7 +121,7 @@ cartBtn.addEventListener('click', fillModal);
 // fonction de remplissage du panier
 // avec affichage du montant total des produits
 function fillModal() {
-    
+
     // initialiser le contenu du panier
     document.querySelector("#clone").innerHTML = '';
     document.querySelector('#cartTotal').innerHTML = `${0} €`;
@@ -152,14 +152,14 @@ function fillModal() {
         // appel de la fonction pour incrémenter un produit
         let addOneProduct = document.querySelectorAll('.addOneProduct');
         addOneProduct.forEach(element => {
-            
+
             element.onclick = addQuantityToProduct;
         });
 
         // appel de la fonction pour décrémenter un produit et le retirer du panier si = 0
         let delOneProduct = document.querySelectorAll('.delOneProduct');
         delOneProduct.forEach(element => {
-            
+
             element.onclick = removeQuantityToProduct;
         });
     });
@@ -169,11 +169,11 @@ function fillModal() {
 //
 // ajouter une quantité de produit
 //
-function addQuantityToProduct () {
-    cart.forEach((product, index) => {
-        let productRef = document.querySelector('.addOneProduct').getAttribute('data-id');
-         if (product.ref == productRef) {
-            product.count++;      
+function addQuantityToProduct() {
+    cart.forEach((product) => {
+        let productRef = this.getAttribute('data-id');
+        if (product.ref == productRef) {
+            product.count++;
         };
     });
     fillModal();
@@ -184,7 +184,7 @@ function addQuantityToProduct () {
 //
 function removeQuantityToProduct() {
     cart.forEach((product) => {
-        let productRef = document.querySelector('.delOneProduct').getAttribute('data-id');
+        let productRef = this.getAttribute('data-id');
         if (product.ref == productRef) {
             if (product.count == 1) {
                 cart.forEach((product, index) => {
@@ -200,7 +200,6 @@ function removeQuantityToProduct() {
     });
     fillModal();
 };
-
 
 //
 // supprimer un produit dans la liste de produit
@@ -224,7 +223,7 @@ function cartTotalFunc() {
     cartTotal = 0;
     cart.forEach(element => {
         cartTotal += parseFloat(element.price);
-        document.querySelector('#cartTotal').innerHTML = `${cartTotal} €`;        
+        document.querySelector('#cartTotal').innerHTML = `${cartTotal} €`;
     });
 };
 
