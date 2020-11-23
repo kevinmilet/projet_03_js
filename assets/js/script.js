@@ -96,8 +96,8 @@ function showCat() {
                         addedItem = products.filter(product => product.ref == item);
 
                         // on ajoute le produit dans le nouveau tableau cart
+                        addedItem[0].count = 1;
                         cart.push(addedItem[0]);
-
                     };
                 });
 
@@ -133,9 +133,7 @@ function fillModal() {
         document.querySelector("#rowContent .ref").innerHTML = element.ref;
         document.querySelector("#rowContent .name").innerHTML = element.name;
         document.querySelector("#rowContent .price").innerHTML = element.price + ' €';
-        // surement à modifier ou enlever
-        document.querySelector('#rowContent #quantity').innerHTML = element.count + 1;
-        //
+        document.querySelector('#rowContent #quantity').innerHTML = element.count;
         document.querySelector('#rowContent .delProduct').setAttribute('data-id', element.ref);
         document.querySelector('#rowContent .addOneProduct').setAttribute('data-id', element.ref);
         document.querySelector('#rowContent .delOneProduct').setAttribute('data-id', element.ref);
@@ -174,7 +172,6 @@ function fillModal() {
 function addQuantityToProduct () {
     cart.forEach((product, index) => {
         let productRef = document.querySelector('.addOneProduct').getAttribute('data-id');
-        console.log(productRef);
          if (product.ref == productRef) {
             product.count++;            
         };
@@ -189,8 +186,7 @@ function addQuantityToProduct () {
 function removeQuantityToProduct() {
     cart.forEach((product) => {
         let productRef = document.querySelector('.delOneProduct').getAttribute('data-id');
-        console.log(productRef);
-        if (product.ref == productRef && product.count >= 0) {
+        if (product.ref == productRef) {
             if (product.count == 1) {
                 removeFromCart();
             } else {
