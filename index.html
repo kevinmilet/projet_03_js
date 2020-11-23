@@ -19,50 +19,61 @@
 <body>
     <div class="container-fluid">
 
+        <!-- Barre de navigation -->
+        <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light fixed-top">
+            <a href="#" class="navbar-brand mr-auto">
+                <img src="assets/img/logo1.png" alt="" class="d-inline align-top" alt="" loading="lazy">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav ml-auto" id="categoriesBtn">
+                    <li class="nav-item">
+                        <a href="#productsContainer" class="nav-link" id="starters">Entrées</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#productsContainer" class="nav-link" id="dishes">Plats</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#productsContainer" class="nav-link" id="desserts">Desserts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#productsContainer" class="nav-link" id="drinks">Boissons</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="" class="nav-link dropdown-toggle" id="navbarDropdownMineLink" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Formules</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Entrée + Plat</a>
+                            <a class="dropdown-item" href="#">Plat + Dessert</a>
+                            <a class="dropdown-item" href="#">Entrée + Plat + Dessert</a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item align-top" id="navCartBtn">
+                        <button type="button" class="btn" data-toggle="modal" data-target="#cartModal" id="cartBtn"><i
+                                class="fas fa-shopping-basket"></i></button>
 
+                    </li>
+                </ul>
+
+                </ul>
+            </div>
+        </nav>
         <!-- Container du cover -->
         <section class="cover">
-            <!-- Barre de navigation -->
-            <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-                <a href="#" class="navbar-brand">
-                    <img src="assets/img/logo1.png" alt="" class="d-inline align-top" alt="" loading="lazy">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav" id="categoriesBtn">
-                        <li class="nav-item">
-                            <a href="#productsContainer" class="nav-link" id="starters">Entrées</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#productsContainer" class="nav-link" id="dishes">Plats</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#productsContainer" class="nav-link" id="desserts">Desserts</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#productsContainer" class="nav-link" id="drinks">Boissons</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a href="" class="nav-link dropdown-toggle" id="navbarDropdownMineLink" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Formules</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">Entrée + Plat</a>
-                                <a class="dropdown-item" href="#">Plat + Dessert</a>
-                                <a class="dropdown-item" href="#">Entrée + Plat + Dessert</a>
-                            </div>
-                        </li>
-                        <li class="nav-item" id="navCartBtn">
-                            <a href="#"><span><i class="fas fa-shopping-cart"></i></span></a>
 
-                        </li>
-                    </ul>
-                </div>
-            </nav>
 
-            <h1>A la fût</h1>
+
+            <h1 class="text-center justify-content-center pt-3">A la Fût</h1>
+            <div class="d-flex justify-content-center coverLogo">
+                <img src="assets/img/logo1.png" alt="Logo A la Fût" class="pt-3">
+            </div>
+
+
         </section>
 
         <!-- Affichage du contenu, card -->
@@ -79,7 +90,7 @@
 
             <div class="card shadow-sm" id="card">
 
-                <img id="cardImg" class="card-img-top" src="https://picsum.photos/200">
+                <img id="cardImg" class="card-img-top" src="">
 
 
                 <div class="card-body">
@@ -87,19 +98,69 @@
                     <p id="cardContent"></p>
                     <p id="cardPrice"></p>
                     <button type="button" class="btn btn-primary" id="cardBtn" data-id=""><span><i
-                                class="fas fa-shopping-cart"></i></span>
+                                class="fas fa-shopping-basket"></i></span>
                         Ajouter</button>
                 </div>
             </div>
 
         </div>
 
+        <!-- Modale Panier -->
+        <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Votre Panier</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <!--première row -->
+                        <div class="row" id="rowTitle">
+                            <h5 class="col text-light bg-dark"></h5>
+                            <h5 class="col text-light bg-dark">Réf</h5>
+                            <h5 class="col text-light bg-dark">Produit</h5>
+                            <h5 class="col text-light bg-dark">Prix</h5>
+                            <h5 class="col text-light bg-dark">Qté</h5>
+
+                        </div>
+
+                        <div class="row" id="rowContent">
+                            <button type="button" class="btn col delProduct" id="delProduct"><i class="far fa-trash-alt"
+                                    ></i></button>
+                            <div class="col ref"></div>
+                            <div class="col name"></div>
+                            <div class="col price"></div>
+                            <div class="col quantity"><span><i class="fas fa-minus delOneProduct mr-1"></i></span><span
+                                    id="quantity">0</span><span><i class="fas fa-plus addOneProduct ml-1"></i></span>
+                            </div>
+                        </div>
+
+                        <div id="clone"></div>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <div class="cartTotal mr-auto">Total: <span id="cartTotal"></span></div>
+                        <button type="button" class="btn btn-primary orderBtn" data-dismiss="modal" id="orderBtn">Payer la
+                            commande</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
         <!-- Footer -->
         <footer class="footer">
-            <h2>Footer</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit amet, alias doloremque modi quia nesciunt,
-                aliquid maiores corporis nisi eaque molestias necessitatibus. Minima corporis repudiandae possimus enim
-                dignissimos, voluptatum tempora?</p>
+
+            <!-- Copyright -->
+            <div class="text-center py-3">
+                <p>2020 A la fût</p>
+            </div>
+            <!-- Copyright -->
+
         </footer>
     </div>
 

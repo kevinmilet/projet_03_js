@@ -1,8 +1,11 @@
+/* Style générale */
+
 * {
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     width: 100%;
     padding: 0;
     margin: 0;
@@ -13,9 +16,20 @@ html, body {
     padding-right: 0;
 }
 
-h1, h2 {
+h1,
+h2 {
     color: #FFF;
     font-family: 'Raleway', sans-serif;
+}
+
+.cover h1 {
+    font-weight: 700;
+    font-size: 75px;
+}
+
+.cover .coverLogo {
+    width: 100%;
+    margin: 0 auto;
 }
 
 p {
@@ -23,32 +37,105 @@ p {
 }
 
 img {
-    width: 720px;
+    max-width: 100%;
     height: auto;
 }
 
-.navbar-brand, .nav-link {
+.btn {
+    border-radius: .1rem;
+}
+
+.btn-primary {
+    color: #FFF;
+    background-color: #FF9419;
+    border-color: #FF9419;
+}
+
+.btn-primary:hover {
+    color: #FF9419;
+    background-color: #FFF;
+    border-color: #FF9419;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #FF9419;
+    border-color: #FF9419;
+}
+
+.btn-primary.focus,
+.btn-primary:focus {
+    color: #fff;
+    background-color: #FF9419;
+    border-color: #FF9419;
+    box-shadow: 0 0 0 0.1rem rgba(60, 65, 70, 0.5);
+}
+
+/* Style navbar */
+
+.navbar-brand,
+.nav-link {
     font-family: 'Railway', sans-serif;
     text-transform: uppercase;
 }
 
+.navbar-light .navbar-nav .nav-link {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.bg-light {
+    box-shadow: 0px 5px 10px -1px rgba(0, 0, 0, 0.50);
+}
+
 nav img {
-    width: 30px;
+    width: 25px;
     height: auto;
 }
 
+/*  Style cover */
+
 .cover {
     width: 100%;
-    height: 900px;
+    height: 750px;
     background: url("../img/restaurant-interior.jpg") no-repeat center fixed;
     background-size: cover;
+    box-shadow: 0px 5px 10px -1px rgba(0, 0, 0, 0.50);
+}
+
+/* Style des cards */
+
+.card {
+    border-radius: 0;
+}
+
+.card-img,
+.card-img-top {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
 
 #colCard {
     display: none;
 }
 
+/* Style de la modale */
+
+.modal-content {
+    border-radius: 0.1rem;
+}
+
+#rowContent {
+    display: none;
+}
+
+/* Style du footer */
+
 .footer {
-    background: grey;
+    background: #FF9419;
+    color: #FFF;
     margin-top: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
 }
