@@ -174,14 +174,13 @@ function addQuantityToProduct () {
         let productRef = document.querySelector('.addOneProduct').getAttribute('data-id');
          if (product.ref == productRef) {
             product.count++;      
-            
         };
     });
     fillModal();
 };
 
 //
-// retirer une quantité de produit
+// retirer une quantité de produit, supprimer si < 1
 //
 function removeQuantityToProduct() {
     cart.forEach((product) => {
