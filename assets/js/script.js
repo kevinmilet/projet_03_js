@@ -15,6 +15,7 @@ let addedItem = 0;
 let cartTotal = 0;
 let quantity = 0;
 
+
 // initialisation de la variable qui incrémentera les ids de cartes
 let newId = 0;
 
@@ -22,7 +23,6 @@ let newId = 0;
 
 let categories = document.querySelectorAll('#categoriesBtn a');
 let cartBtn = document.querySelector('#cartBtn');
-let delProduct = document.querySelector('#delProduct');
 
 // initialisation du contenu des lignes du panier
 let itm = document.querySelector("#rowContent");
@@ -97,7 +97,6 @@ categories.forEach(elements => {
                     // on ajoute le produit dans le nouveau tableau cart
                     cart.push(addedItem[0]);
 
-                    console.log(cart)
                 };
             });
 
@@ -129,36 +128,45 @@ function fillModal() {
         document.querySelector("#rowContent .ref").innerHTML = element.ref;
         document.querySelector("#rowContent .name").innerHTML = element.name;
         document.querySelector("#rowContent .price").innerHTML = element.price;
+        document.querySelector('#rowContent #quantity').innerHTML = element.count + 1;
         let cln = itm.cloneNode(true);
         cln.id = "rowContent" + index;
         document.querySelector("#clone").appendChild(cln);
-//
-// supprimer un prodduit dans la liste de produit
-//
 
 
-// delProduct.addEventListener('click', removeProduct);
+        
 
-delProduct.onclick = function () {
 
-    document.querySelector("#clone").removeChild(cln);
-    
-
-}
         // affichage du total à payer
         cartTotal += parseFloat(element.price);
 
         document.querySelector('#cartTotal').innerHTML = `${cartTotal} €`;
     });
 }
+//
+// supprimer un produit dans la liste de produit
+//
 
 
+let removeFromCartBtn = document.querySelectorAll('.delProduct');
+
+removeFromCartBtn.forEach(elementBtn => {
+
+    elementBtn.onclick = function removeProductFromCart() {
+        cart.forEach(item => {
+            console.log(cart)
+            cart.splice(item, 1);
+            console.log(cart)
+        })
+
+    }
+})
 
 //
 // Vider le panier quand on clique sur 'payer la commande'
 //
 
 let orderBtn = document.querySelector('#orderBtn');
-orderBtn.onclick = function() {
+orderBtn.onclick = function () {
     cart = [];
 }
