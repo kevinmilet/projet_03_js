@@ -132,27 +132,11 @@ function fillModal() {
         let cln = itm.cloneNode(true);
         cln.id = "rowContent" + index;
         document.querySelector("#clone").appendChild(cln);
-<<<<<<< HEAD
-        //
-        // supprimer un prodduit dans la liste de produit
-        //
-
-
-        // delProduct.addEventListener('click', removeProduct);
-
-        delProduct.onclick = function () {
-
-            document.querySelector("#clone").removeChild(cln);
-
-
-        }
-=======
 
 
         
 
 
->>>>>>> a22353c1f94dba0d6b3e7cbb38ef3c916747c0b2
         // affichage du total à payer
         cartTotal += parseFloat(element.price);
 
