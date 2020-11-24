@@ -132,19 +132,19 @@ function fillModal() {
         let cln = itm.cloneNode(true);
         cln.id = "rowContent" + index;
         document.querySelector("#clone").appendChild(cln);
-//
-// supprimer un prodduit dans la liste de produit
-//
+        //
+        // supprimer un prodduit dans la liste de produit
+        //
 
 
-// delProduct.addEventListener('click', removeProduct);
+        // delProduct.addEventListener('click', removeProduct);
 
-delProduct.onclick = function () {
+        delProduct.onclick = function () {
 
-    document.querySelector("#clone").removeChild(cln);
-    
+            document.querySelector("#clone").removeChild(cln);
 
-}
+
+        }
         // affichage du total à payer
         cartTotal += parseFloat(element.price);
 
@@ -159,6 +159,6 @@ delProduct.onclick = function () {
 //
 
 let orderBtn = document.querySelector('#orderBtn');
-orderBtn.onclick = function() {
+orderBtn.onclick = function () {
     cart = [];
 }
