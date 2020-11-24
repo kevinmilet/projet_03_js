@@ -142,7 +142,6 @@ function fillModal() {
         cln.id = "rowContent" + index;
         document.querySelector("#clone").appendChild(cln);
 
-
         // appel de la fonction supprimer un produit du panier 'removeFromCart'
         let removeFromCartBtn = document.querySelectorAll('.delProduct');
         removeFromCartBtn.forEach(element => {
@@ -224,27 +223,16 @@ function removeFromCart(event) {
     return true;
 };
 
-// //
-// // afficher le total à payer
-// //
-// function cartTotalFunc() {
-//     cartTotal = 0;
-//     cart.forEach(element => {
-//         cartTotal += parseFloat(element.price);
-//         document.querySelector('#cartTotal').innerHTML = `${cartTotal} €`;
-//     });
-// };
-
+//
 // afficher le total à payer
 //
 function cartTotalFunc() {
     cartTotal = 0;
     cart.forEach(element => {
-        cartTotal += parseFloat(element.price*element.count);
+        cartTotal += parseFloat(element.price * element.count);
 
-    }); 
+    });
     document.querySelector('#cartTotal').innerHTML = `${cartTotal.toFixed(2)} €`;
-
 };
 
 //
@@ -255,5 +243,4 @@ orderBtn.onclick = function () {
     cart = [];
     document.querySelector("#clone").innerHTML = '';
     document.querySelector('#cartTotal').innerHTML = `${0} €`;
-
 };
