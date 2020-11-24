@@ -186,13 +186,6 @@ function removeQuantityToProduct() {
         let productRef = this.getAttribute('data-id');
         if (product.ref == productRef) {
             if (product.count == 1) {
-                // cart.forEach((product, index) => {
-                //     if (product.ref == this.getAttribute('data-id')) {
-                //         cart.splice(index, 1);
-                //         cartTotalFunc();
-                //         console.log(cart);
-                //     };
-                // });
                 removeFromCart(productRef);
                 console.log(cart);
             } else {
