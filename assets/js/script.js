@@ -206,11 +206,13 @@ function removeQuantityToProduct() {
 //
 // supprimer un produit dans la liste de produit
 //
-function removeFromCart(event) {
-    console.log(event.target.getAttribute('data-id'));
-    if (productRef != event.target.getAttribute('data-id')) {
-        productRef = event.target.getAttribute('data-id');
-    };
+function removeFromCart(eventOrProduct) {
+    
+    if (eventOrProduct.target) {
+        productRef = eventOrProduct.target.getAttribute('data-id');
+    } else {
+        productRef = eventOrProduct;
+    }
 
     cart.forEach((product, index) => {
 
