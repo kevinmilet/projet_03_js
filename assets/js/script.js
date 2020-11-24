@@ -222,9 +222,11 @@ function removeFromCart() {
 function cartTotalFunc() {
     cartTotal = 0;
     cart.forEach(element => {
-        cartTotal += parseFloat(element.price);
-        document.querySelector('#cartTotal').innerHTML = `${cartTotal} €`;
-    });
+        cartTotal += parseFloat(element.price*element.count);
+       
+    }); 
+    document.querySelector('#cartTotal').innerHTML = `${cartTotal.toFixed(2)} €`;
+    
 };
 
 
