@@ -106,11 +106,11 @@
         </div>
 
         <!-- Modale Panier -->
-        <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModal" aria-hidden="true">
-            <div class="modal-dialog">
+        <div class="modal fade" id="cartModal" data-backdrop="static" tabindex="-1" aria-labelledby="cartModal" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Votre Panier</h5>
+                        <h5 class="modal-title">Votre Panier</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -128,13 +128,13 @@
                         </div>
 
                         <div class="row" id="rowContent">
-                            <button type="button" class="btn col delProduct" id="delProduct"><i class="far fa-trash-alt"
+                            <button type="button" class="btn col delProduct" data-id=""><i class="far fa-trash-alt"
                                     ></i></button>
                             <div class="col ref"></div>
                             <div class="col name"></div>
                             <div class="col price"></div>
-                            <div class="col quantity"><span><i class="fas fa-minus delOneProduct mr-1"></i></span><span
-                                    id="quantity">0</span><span><i class="fas fa-plus addOneProduct ml-1"></i></span>
+                            <div class="col quantity"><span type="button"><i class="fas fa-minus delOneProduct mr-2"></i></span><span
+                                    id="quantity"></span><span type="button"><i class="fas fa-plus addOneProduct ml-2"></i></span>
                             </div>
                         </div>
 
@@ -143,7 +143,7 @@
                     </div>
 
                     <div class="modal-footer">
-                        <div class="cartTotal mr-auto">Total: <span id="cartTotal"></span></div>
+                        <div class="cartTotal mr-auto">Votre total: <span id="cartTotal"></span></div>
                         <button type="button" class="btn btn-primary orderBtn" data-dismiss="modal" id="orderBtn">Payer la
                             commande</button>
                     </div>
@@ -155,11 +155,11 @@
         <!-- Footer -->
         <footer class="footer">
 
-            <!-- Copyright -->
+            
             <div class="text-center py-3">
                 <p>2020 A la fût</p>
             </div>
-            <!-- Copyright -->
+            
 
         </footer>
     </div>

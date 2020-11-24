@@ -131,6 +131,10 @@ nav img {
     display: none;
 }
 
+#cartTotal, .cartTotal {
+    font-weight: 700;
+}
+
 /* Style du footer */
 
 .footer {
