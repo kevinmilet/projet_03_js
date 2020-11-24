@@ -187,12 +187,15 @@ function removeQuantityToProduct() {
         let productRef = this.getAttribute('data-id');
         if (product.ref == productRef) {
             if (product.count == 1) {
-                cart.forEach((product, index) => {
-                    if (product.ref == this.getAttribute('data-id')) {
-                        cart.splice(index, 1);
-                        cartTotalFunc();
-                    };
-                });
+                // cart.forEach((product, index) => {
+                //     if (product.ref == this.getAttribute('data-id')) {
+                //         cart.splice(index, 1);
+                //         cartTotalFunc();
+                //         console.log(cart);
+                //     };
+                // });
+                removeFromCart(productRef);
+                console.log(cart);
             } else {
                 product.count--;
             };
@@ -204,29 +207,45 @@ function removeQuantityToProduct() {
 //
 // supprimer un produit dans la liste de produit
 //
-function removeFromCart() {
+function removeFromCart(event) {
+    console.log(event.target.getAttribute('data-id'));
+    if (productRef != event.target.getAttribute('data-id')) {
+        productRef = event.target.getAttribute('data-id');
+    };
+
     cart.forEach((product, index) => {
-        if (product.ref == this.getAttribute('data-id')) {
+
+        if (product.ref == productRef) {
             cart.splice(index, 1);
             cartTotalFunc();
         };
     });
     fillModal();
-    // return true;
+    return true;
 };
 
+// //
+// // afficher le total à payer
+// //
+// function cartTotalFunc() {
+//     cartTotal = 0;
+//     cart.forEach(element => {
+//         cartTotal += parseFloat(element.price);
+//         document.querySelector('#cartTotal').innerHTML = `${cartTotal} €`;
+//     });
+// };
 
-//
 // afficher le total à payer
 //
 function cartTotalFunc() {
     cartTotal = 0;
     cart.forEach(element => {
-        cartTotal += parseFloat(element.price);
-        document.querySelector('#cartTotal').innerHTML = `${cartTotal} €`;
-    });
-};
+        cartTotal += parseFloat(element.price*element.count);
 
+    }); 
+    document.querySelector('#cartTotal').innerHTML = `${cartTotal.toFixed(2)} €`;
+
+};
 
 //
 // Vider le panier quand on clique sur 'payer la commande'
